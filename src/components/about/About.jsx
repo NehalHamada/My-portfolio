@@ -2,13 +2,19 @@ import { sectionTitles } from "../../data/sectionTitles";
 import SectionTitle from "../common/SectionTitle";
 import { aboutData } from "../../data/aboutCards";
 import person from "../../assets/images/formal.jpg";
+import { motion as Motion } from "framer-motion";
 
 function About() {
   return (
     <>
       <div className=" bg-[#101828] p-6 text-[#A2A5AC] text-center">
         <SectionTitle title={sectionTitles.about} />
-        <div className="flex justify-center gap-6 ">
+        <Motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="flex justify-center gap-6 ">
           <img
             src={person}
             width={300}
@@ -36,7 +42,7 @@ function About() {
               </div>
             ))}
           </div>
-        </div>
+        </Motion.div>
       </div>
     </>
   );

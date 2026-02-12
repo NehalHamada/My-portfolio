@@ -1,21 +1,41 @@
 import { sectionTitles } from "../../data/sectionTitles";
 import { frontSkill, tools } from "../../data/skills";
 import SectionTitle from "../common/SectionTitle";
+import { motion as Motion } from "framer-motion";
 
 function Skills() {
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const card = {
+    hidden: { opacity: 0, y: 50 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
   return (
     <div className="bg-[#1E2939] text-[#A6AAB0] text-center p-3">
       <SectionTitle title={sectionTitles.skills} />
 
-      <div
+      <Motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
         className="mt-4 
                       flex md:flex-row 
                       gap-6 
+                      justify-start md:justify-center
                       overflow-x-auto md:overflow-visible
                       snap-x snap-mandatory
                       scroll-smooth">
         {/* First Card */}
-        <div
+        <Motion.div
+          variants={card}
           className="bg-[#0b1220] p-6 rounded-xl 
                         min-w-full md:min-w-0 
                         md:w-full max-w-xl 
@@ -35,10 +55,11 @@ function Skills() {
               </div>
             </div>
           ))}
-        </div>
+        </Motion.div>
 
         {/* Second Card */}
-        <div
+        <Motion.div
+          variants={card}
           className="bg-[#0b1220] p-6 rounded-xl 
                         min-w-full md:min-w-0 
                         md:w-full max-w-xl 
@@ -58,8 +79,8 @@ function Skills() {
               </div>
             </div>
           ))}
-        </div>
-      </div>
+        </Motion.div>
+      </Motion.div>
     </div>
   );
 }

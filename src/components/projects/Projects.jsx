@@ -1,13 +1,32 @@
 import { data } from "../../data/projects";
 import { sectionTitles } from "../../data/sectionTitles";
 import SectionTitle from "../common/SectionTitle";
+import { motion as Motion } from "framer-motion";
 
 function Projects() {
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const card = {
+    hidden: { opacity: 0, y: 50 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
   return (
     <div className="bg-[#101828] p-2 text-[#A2A5AC] text-center">
       <SectionTitle title={sectionTitles.project} />
 
-      <div
+      <Motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
         className="
         mt-4
         flex md:flex-row
@@ -19,7 +38,8 @@ function Projects() {
         px-2
       ">
         {data.map((item) => (
-          <div
+          <Motion.div
+            variants={card}
             key={item.name}
             className="
             bg-[#1E2939]
@@ -52,9 +72,9 @@ function Projects() {
                 ))}
               </div>
             </div>
-          </div>
+          </Motion.div>
         ))}
-      </div>
+      </Motion.div>
     </div>
   );
 }
