@@ -6,22 +6,49 @@ function Projects() {
   return (
     <div className="bg-[#101828] p-2 text-[#A2A5AC] text-center">
       <SectionTitle title={sectionTitles.project} />
-      <div className="flex justify-center gap-7 mt-2 p-2 ">
+
+      <div
+        className="
+        mt-4
+        flex md:flex-row
+        justify-start md:justify-center
+        gap-6
+        overflow-x-auto md:overflow-visible
+        snap-x snap-mandatory
+        scroll-smooth
+        px-2
+      ">
         {data.map((item) => (
-          <div key={item.name} className="card  w-96 shadow-sm bg-[#1E2939]">
+          <div
+            key={item.name}
+            className="
+            bg-[#1E2939]
+            rounded-xl
+            shadow-sm
+            min-w-full md:min-w-0
+            md:w-96
+            snap-center
+          ">
             <figure>
-              <img src={item.src} alt="Shoes" />
+              <img
+                src={item.src}
+                alt={item.name}
+                className="w-full  object-cover rounded-t-xl"
+              />
             </figure>
-            <div className="card-body">
-              <h2 className="card-title text-white text-3xl">{item.name}</h2>
-              <p className="text-[#7D8A92]">{item.description}</p>
-              <div className="card-actions justify-center gap-4">
+
+            <div className="p-6">
+              <h2 className="text-white text-2xl font-semibold">{item.name}</h2>
+
+              <p className="text-[#7D8A92] mt-3">{item.description}</p>
+
+              <div className="flex flex-wrap justify-center gap-3 mt-4">
                 {item.items.map((el) => (
-                  <div key={el}>
-                    <p className="text-[#AB8DD6] bg-[#3D3062] p-2 rounded-3xl">
-                      {el}
-                    </p>
-                  </div>
+                  <span
+                    key={el}
+                    className="text-[#AB8DD6] bg-[#3D3062] px-3 py-1 rounded-3xl text-sm">
+                    {el}
+                  </span>
                 ))}
               </div>
             </div>

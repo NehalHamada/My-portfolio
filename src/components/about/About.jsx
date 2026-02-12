@@ -1,20 +1,21 @@
 import { sectionTitles } from "../../data/sectionTitles";
 import SectionTitle from "../common/SectionTitle";
 import { aboutData } from "../../data/aboutCards";
+import person from "../../assets/images/formal.jpg";
 
 function About() {
   return (
     <>
       <div className=" bg-[#101828] p-6 text-[#A2A5AC] text-center">
         <SectionTitle title={sectionTitles.about} />
-        <div className="flex justify-center gap-6">
+        <div className="flex justify-center gap-6 ">
           <img
-            src="/src/assets/images/formal.jpg"
+            src={person}
             width={300}
-            className="rounded-lg"
+            className="rounded-lg hidden md:block"
           />
           <div>
-            <h5 className="max-w-md text-left mt-2">
+            <h5 className="max-w-md text-left mt-2 ms-2">
               Frontend Developer with strong experience in React.js and modern
               JavaScript. Skilled in building responsive UI, managing
               application state, and delivering clean, scalable code. ITI

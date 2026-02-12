@@ -6,9 +6,22 @@ function Skills() {
   return (
     <div className="bg-[#1E2939] text-[#A6AAB0] text-center p-3">
       <SectionTitle title={sectionTitles.skills} />
-      <div className="flex gap-9 mt-4 justify-center">
-        <div className="bg-[#0b1220] p-6 rounded-xl w-full max-w-xl">
+
+      <div
+        className="mt-4 
+                      flex md:flex-row 
+                      gap-6 
+                      overflow-x-auto md:overflow-visible
+                      snap-x snap-mandatory
+                      scroll-smooth">
+        {/* First Card */}
+        <div
+          className="bg-[#0b1220] p-6 rounded-xl 
+                        min-w-full md:min-w-0 
+                        md:w-full max-w-xl 
+                        snap-center">
           <h2 className="text-gray-300 text-lg mb-6">Frontend</h2>
+
           {frontSkill.map((el) => (
             <div key={el.name} className="mb-5">
               <div className="flex justify-between text-sm text-gray-400 mb-2">
@@ -23,9 +36,15 @@ function Skills() {
             </div>
           ))}
         </div>
-        {/* second box */}
-        <div className="bg-[#0b1220] p-6 me-9 rounded-xl w-full max-w-xl">
+
+        {/* Second Card */}
+        <div
+          className="bg-[#0b1220] p-6 rounded-xl 
+                        min-w-full md:min-w-0 
+                        md:w-full max-w-xl 
+                        snap-center">
           <h2 className="text-gray-300 text-lg mb-6">Tools</h2>
+
           {tools.map((el) => (
             <div key={el.name} className="mb-5">
               <div className="flex justify-between text-sm text-gray-400 mb-2">
