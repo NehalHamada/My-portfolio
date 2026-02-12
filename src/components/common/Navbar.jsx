@@ -19,19 +19,17 @@ function Navbar() {
           />
         </div>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex gap-6">
           {list.map((item) => (
             <a
               key={item.name}
               href={`#${item.id}`}
-              className="hover:text-purple-400 transition">
+              className="hover:text-purple-400 transition me-2">
               {item.name}
             </a>
           ))}
         </div>
 
-        {/* Mobile Button */}
         <button className="md:hidden" onClick={() => setOpen(!open)}>
           {open ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -45,7 +43,7 @@ function Navbar() {
               key={item.name}
               href={`#${item.id}`}
               onClick={() => setOpen(false)}
-              className="border-b border-gray-700 pb-2">
+              className="border-b border-gray-700 pb-2 text-center">
               {item.name}
             </a>
           ))}

@@ -16,10 +16,11 @@ function Hero() {
         speed={60}
       />
       <AnimatedText
-        text="crafting beautiful, responsive, and user-friendly web experiences with modern technologies"
+        text="crafting beautiful, responsive, and user friendly web experiences with modern technologies "
         className="text-[rgba(213,208,226,0.7)] mt-4"
         speed={20}
       />
+
       <HeroSocials />
     </div>
   );

@@ -2,15 +2,15 @@ import { useState, useEffect } from "react";
 
 function AnimatedText({ text, className = "", speed = 50 }) {
   const [displayedText, setDisplayedText] = useState("");
-  useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      setDisplayedText((prev) => prev + text[index]);
-      index++;
-      if (index >= text.length) clearInterval(interval);
-    }, speed);
 
-    return () => clearInterval(interval);
+  useEffect(() => {
+    // setDisplayedText("");
+
+    text.split("").forEach((char, index) => {
+      setTimeout(() => {
+        setDisplayedText((prev) => prev + char);
+      }, index * speed);
+    });
   }, [text, speed]);
 
   return <p className={className}>{displayedText}</p>;

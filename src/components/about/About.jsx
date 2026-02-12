@@ -35,7 +35,7 @@ function About() {
                 <div className="card-body">
                   <div className="flex gap-2">
                     <item.icons className="text-[#CB30E0]" />
-                    <h2 className="card-title">{item.title}</h2>
+                    <h2 className="card-title text-white">{item.title}</h2>
                   </div>
                   <p>{item.subTitle}</p>
                 </div>
