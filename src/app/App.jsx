@@ -8,6 +8,7 @@ import Projects from "../components/projects/Projects";
 
 import Footer from "../components/common/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Contact from "../components/contact/Contact";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
       </div>
       <div id="projects">
         <Projects />
+      </div>
+      <div id="contact">
+        <Contact />
       </div>
       <Footer />
     </>

@@ -21,7 +21,7 @@ function About() {
             className="rounded-lg hidden md:block"
           />
           <div>
-            <h5 className="max-w-md text-left mt-2 ms-2">
+            <h5 className="max-w-md text-left mt-2 ms-4 sm:ms-0">
               Frontend Developer with strong experience in React.js and modern
               JavaScript. Skilled in building responsive UI, managing
               application state, and delivering clean, scalable code. ITI
@@ -31,7 +31,7 @@ function About() {
             {aboutData.map((item) => (
               <div
                 key={item.title}
-                className="card w-96 bg-[#3F4959] card-sm shadow-sm mt-3">
+                className="card w-90 bg-[#3F4959] card-sm shadow-sm mt-3 ms-4 sm:ms-0">
                 <div className="card-body">
                   <div className="flex gap-2">
                     <item.icons className="text-[#CB30E0]" />

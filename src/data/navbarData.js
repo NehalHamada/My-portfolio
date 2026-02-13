@@ -3,4 +3,5 @@ export const list = [
   { name: "About", id: "about" },
   { name: "Skill", id: "skill" },
   { name: "Project", id: "projects" },
+  { name: "Contact", id: "contact" },
 ];

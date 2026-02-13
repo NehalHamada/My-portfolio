@@ -1,5 +1,4 @@
 import AnimatedText from "../../helper/AnimatedText";
-import HeroSocials from "./HeroSocials";
 
 function Hero() {
   return (
@@ -20,8 +19,6 @@ function Hero() {
         className="text-[rgba(213,208,226,0.7)] mt-4"
         speed={20}
       />
-
-      <HeroSocials />
     </div>
   );
 }
