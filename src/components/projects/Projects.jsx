@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { data } from "../../data/projects";
+import { colors, data } from "../../data/projects";
 import { sectionTitles } from "../../data/sectionTitles";
 import SectionTitle from "../common/SectionTitle";
 import { motion as Motion } from "framer-motion";
@@ -26,8 +26,9 @@ function Projects() {
     carousel.addEventListener("scroll", handleScroll);
     return () => carousel.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
-    <div className="bg-[#101828] p-2 text-[#A2A5AC] text-center">
+    <div className="bg-[#F5F6F7] p-2  text-center">
       <SectionTitle title={sectionTitles.project} />
       <Motion.div
         ref={carouselRef}
@@ -42,9 +43,9 @@ function Projects() {
         {data.map((item) => (
           <Motion.div
             variants={card}
-            key={item.name}
+            key={item.id}
             className="
-              bg-[#1E2939] rounded-xl shadow-sm min-w-full md:min-w-0 md:w-96 snap-center
+              rounded-xl shadow-sm min-w-full md:min-w-0 md:w-96 snap-center
             ">
             <figure>
               <img
@@ -54,15 +55,24 @@ function Projects() {
               />
             </figure>
             <div className="p-6">
-              <h2 className="text-white text-2xl font-semibold">{item.name}</h2>
-              <p className="text-[#7D8A92] mt-3">{item.description}</p>
+              <h2 className="text-2xl font-semibold">{item.name}</h2>
+              <p className="text-[#4A5565] mt-3">{item.description}</p>
               <div className="flex flex-wrap justify-center gap-3 mt-4">
-                {item.items.map((el) => (
+                {item.items.map((el, index) => (
                   <span
                     key={el}
-                    className="text-[#AB8DD6] bg-[#3D3062] px-3 py-1 rounded-3xl text-sm">
+                    className={`text-[#ffff] ${colors[index % colors.length]} px-3 py-1 rounded-3xl text-sm`}>
                     {el}
                   </span>
+                ))}
+              </div>
+              <div className="flex justify-center gap-2 mt-3">
+                {item.icons.map((Icon) => (
+                  <div key={Icon}>
+                    <a href={Icon.src} target="blank">
+                      <Icon.name className="text-black" />
+                    </a>
+                  </div>
                 ))}
               </div>
             </div>

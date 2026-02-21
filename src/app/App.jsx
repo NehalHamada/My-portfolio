@@ -13,7 +13,7 @@ import Contact from "../components/contact/Contact";
 function App() {
   return (
     <>
-      <div className="bg-[linear-gradient(to_bottom_right,#8F2C8F,#5B2B82,#2B1F6F,#0F0B5C)]">
+      <div className="bg-[rgba(55,71,108,0.8)]">
         <Navbar />
         <div id="hero">
           <Hero />
@@ -22,12 +22,13 @@ function App() {
       <div id="about">
         <About />
       </div>
-      <div id="skill">
-        <Skill />
-      </div>
       <div id="projects">
         <Projects />
       </div>
+      <div id="skill">
+        <Skill />
+      </div>
+
       <div id="contact">
         <Contact />
       </div>

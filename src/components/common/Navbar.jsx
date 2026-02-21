@@ -9,13 +9,13 @@ function Navbar() {
   return (
     <div className="text-white p-3">
       <div className="flex justify-between items-center">
-        {/* Left Side */}
         <div className="flex items-center gap-3">
           <img
             className="rounded-full"
             src={personal}
             alt="profile"
             width={35}
+            height={35}
           />
         </div>
 
@@ -35,7 +35,6 @@ function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {open && (
         <div className="flex flex-col mt-4 gap-4 md:hidden">
           {list.map((item) => (

@@ -7,7 +7,7 @@ import { motion as Motion } from "framer-motion";
 function About() {
   return (
     <>
-      <div className=" bg-[#101828] p-6 text-[#A2A5AC] text-center">
+      <div className=" bg-white p-6 text-center">
         <SectionTitle title={sectionTitles.about} />
         <Motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -31,13 +31,13 @@ function About() {
             {aboutData.map((item) => (
               <div
                 key={item.title}
-                className="card w-90 bg-[#3F4959] card-sm shadow-sm mt-3 ms-4 sm:ms-0">
+                className="card w-90 bg-white card-sm shadow-sm mt-3 ms-4 sm:ms-0">
                 <div className="card-body">
                   <div className="flex gap-2">
-                    <item.icons className="text-[#CB30E0]" />
-                    <h2 className="card-title text-white">{item.title}</h2>
+                    <item.icons className="text-[rgba(0,0,0,0.7)]" />
+                    <h2 className="card-title ">{item.title}</h2>
                   </div>
-                  <p>{item.subTitle}</p>
+                  <p className="text-[#848990]">{item.subTitle}</p>
                 </div>
               </div>
             ))}

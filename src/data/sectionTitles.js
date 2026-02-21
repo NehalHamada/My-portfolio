@@ -1,6 +1,6 @@
 export const sectionTitles = {
   about: "About Me",
-  skills: "Skills & Expertise",
-  project: "Projects",
+  project: "Experience of Projects",
+  skills: "Skills & Tools",
   touch: "Contact",
 };

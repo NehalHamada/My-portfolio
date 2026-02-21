@@ -13,7 +13,7 @@ export default function Contact() {
     show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
   };
   return (
-    <div className="bg-[#1E2939] text-white p-2" id="contact">
+    <div className="bg-[#F5F6F7]  p-2" id="contact">
       <SectionTitle title={sectionTitles.touch} />
       <Motion.div
         className="text-center"
@@ -25,16 +25,17 @@ export default function Contact() {
           <Motion.div
             variants={card}
             key={el.name}
-            className="card w-72 bg-[#3F4959] card-sm shadow-sm mt-3 mx-auto">
+            className="flex card w-72 bg-[#5F6C89] card-sm shadow-sm mt-3 mx-auto">
             <div className="card-body">
-              <div className="flex justify-center gap-2">
-                <el.icon className="text-[#CB30E0]" />
+              <div className="flex justify-center items-center gap-2">
+                <el.icon className="text-white" />
+                <h2 className="text-xl text-white">{el.name}</h2>
+              </div>
+              <div>
                 <a
                   href={el.src}
                   target="blank"
-                  className="card-title text-white cursor-pointer">
-                  {el.name}
-                </a>
+                  className="card-title text-white cursor-pointer"></a>
               </div>
             </div>
           </Motion.div>
