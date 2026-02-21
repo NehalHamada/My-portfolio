@@ -28,7 +28,7 @@ export const data = [
     items: ["React", "tailwind", "yup"],
     icons: [
       { name: GithubIcon, src: "https://github.com/NehalHamada/Blog-app" },
-      { name: Scaling, src: "blog-app-eight-rust-76.vercel.app" },
+      { name: Scaling, src: "https://blog-app-lake-delta.vercel.app/" },
     ],
   },
   {
@@ -40,7 +40,7 @@ export const data = [
     items: ["Next", "tailwind"],
     icons: [
       { name: GithubIcon, src: "https://github.com/NehalHamada/moda-wear" },
-      { name: Scaling, src: "moda-wear.vercel.app" },
+      { name: Scaling, src: "https://moda-wear-wfdm.vercel.app/" },
     ],
   },
 ];
